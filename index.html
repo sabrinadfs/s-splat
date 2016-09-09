@@ -1,96 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="S-SPLat : Balancing Soundness and Efficiency for Practical Testing of Configurable Software">
+    <title>S-SPLat by sabrinadfs</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>S-SPLat</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sabrinadfs/s-splat">View on GitHub</a>
-
-          <h1 id="project_title">S-SPLat</h1>
-          <h2 id="project_tagline">Balancing Soundness and Efficiency for Practical Testing of Configurable Software</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sabrinadfs/s-splat/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sabrinadfs/s-splat/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <header>
+        <h1>S-SPLat</h1>
+        <p>Balancing Soundness and Efficiency for Practical Testing of Configurable Software</p>
+        <p class="view"><a href="https://github.com/sabrinadfs/s-splat">View the Project on GitHub <small>sabrinadfs/s-splat</small></a></p>
+        <ul>
+          <li><a href="https://github.com/sabrinadfs/s-splat/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sabrinadfs/s-splat/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sabrinadfs/s-splat">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h3>
 <a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
 
 <p>Testing configurable systems is important and challenging due to the enormous space of configurations where errors can hide. Existing approaches to test these systems are often costly or unreliable. This paper proposes S-SPLat a technique that combines heuristic sampling with symbolic search to obtain both breadth and depth in the exploration of the configuration space. S-SPLat builds on SPLat, our previously developed technique, that explores all reachable configurations from tests. In contrast to its predecessor, S-SPLat sacrifices soundness in favor of efficiency. We evaluated our technique on eight software product lines of various sizes and on a large configurable system (GCC). Considering the results for GCC, S-SPLat was able to reproduce all five bugs that we previously found in a previous study with SPLat but much faster and it was able to find two new bugs in a recent release of GCC. Results suggest that it is preferable to use a combination of simple heuristics to drive the symbolic search as opposed to a single heuristic that enforces a large set of test requirements. S-SPLat and our experimental infrastructure are publicly available.</p>
 
-<h3>
-<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors</h3>
-
-<p><a href="http://www.cin.ufpe.br/%7Esfs/">Sabrina Souto</a></p>
-
-<p><a href="http://www.cin.ufpe.br/%7Edamorim/">Marcelo d'Amorim</a></p>
-
-<p><a href="http://www.dsc.ufcg.edu.br/%7Erohit/Rohit_Gheyi/Home.html">Rohit Gheyi</a></p>
+<p><a href="http://www.cin.ufpe.br/%7Esfs/">Sabrina Souto</a>, <a href="http://www.cin.ufpe.br/%7Edamorim/">Marcelo d'Amorim</a>, <a href="http://www.dsc.ufcg.edu.br/%7Erohit/Rohit_Gheyi/Home.html">Rohit Gheyi</a></p>
 
 <h3>
 <a id="artifact-evaluation---icse-2016-submission" class="anchor" href="#artifact-evaluation---icse-2016-submission" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Evaluation - ICSE 2016 submission</h3>
 
 <p>The artifact evaluation contains all the artifacts used in this paper, including the source code, the data set and scripts to generate tables and plots. We first explain how to reproduce the results manually, and then we packaged the artifacts into a single virtual machine. If you have any question, please contact <a href="sabrinadfs@gmail.com">Sabrina Souto</a>.</p>
 
-<h3>
-<a id="experiments---manual" class="anchor" href="#experiments---manual" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Experiments - Manual</h3>
+<hr>
 
-<ol>
-<li>Experiments for SPLs </li>
-</ol>
+<p><strong>EXPERIMENTS-MANUAL</strong></p>
 
-<p><strong>Evaluation Environment</strong>
-The SPLs evaluation was performed against a machine with the following specification:
-Architecture: X86_64
-OS: Mac OS X Lion 10.7.5
-Processor: 2,4 GHz Intel Core i5
-Memory: 4 GB 
-Java version: 1.7.0_65 </p>
+<hr>
 
-<ol>
-<li>Experiments for GCC 
-...</li>
-</ol>
+<p><strong>Experiments for SPLs</strong></p>
 
-<h3>
-<a id="experiments---vm" class="anchor" href="#experiments---vm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Experiments - VM</h3>
+<p><em>Evaluation Environment</em></p>
 
-<ol>
-<li>Experiments for SPLs 
-... </li>
-<li>Experiments for GCC 
-...</li>
-</ol>
+<pre><code> The SPLs evaluation was performed against a machine with the following specification:
+ * Architecture: X86_64
+ * OS: Mac OS X El Capitan 10.11.6
+ * Processor: 2,4 GHz Intel Core i5
+ * Memory: 4 GB 
+ * Java version: 1.8.0_60
+</code></pre>
+
+<p><em>Running S-SPLat</em></p>
+
+<pre><code> 1.
+ 2.
+ 3.
+ ...
+</code></pre>
+
+<p><em>Reproducing Results</em></p>
+
+<pre><code> 1.
+ 2.
+ 3.
+ ...
+</code></pre>
+
+<p><strong>Experiments for GCC</strong>
+...</p>
+
+<hr>
+
+<p><strong>EXPERIMENTS-VM</strong></p>
+
+<hr>
+
+<p><strong>Experiments for SPLs</strong>
+... </p>
+
+<p><strong>Experiments for GCC</strong>
+...</p>
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">S-SPLat maintained by <a href="https://github.com/sabrinadfs">sabrinadfs</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/sabrinadfs">sabrinadfs</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
