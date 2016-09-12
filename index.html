@@ -87,19 +87,23 @@
 <hr>
 
 <h5>
-<a id="1-experiments-for-spls-under-construction" class="anchor" href="#1-experiments-for-spls-under-construction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) Experiments for SPLs (under construction)</h5>
+<a id="1-experiments-for-spls" class="anchor" href="#1-experiments-for-spls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) Experiments for SPLs</h5>
+
+<p>Here is how to run the S-SPLat evaluation against all the subjects we used (companies, desktopsearcher, email, gpl, jtopas, notepad, sudoku, and zipme). The instructions are for our VM image:</p>
 
 <p><em>Running S-SPLat</em></p>
 
-<pre><code> 1.
- 2.
- 3.
- ...
+<pre><code> 1. &gt; cd spls/s-splat
+ 2. &gt; chmod +x ssplat 
+ 3. &gt; chmod +x runssplat.sh 
+ 4. &gt; ./runssplat.sh (run S-SPLat for all subjects, this may take about 5 days)
 </code></pre>
+
+<p>The output of S-SPLat execution is stored in /spls/s-splat/data (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each subject and technique, for example: /spls/s-splat/data/gpl_pairwise.txt</p>
 
 <p><em>Reproducing Results</em></p>
 
-<pre><code> 1.
+<pre><code> 1. 
  2.
  3.
  ...
