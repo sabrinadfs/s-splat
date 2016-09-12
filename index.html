@@ -56,11 +56,11 @@
 
 <p><strong>Setup</strong>: Start the Docker default machine and load the image containing our VM image (created on Ubuntu 15.04). On terminal, run the following commands:</p>
 
-<pre><code>  &gt; docker-machine create --driver virtualbox default (create a new Docker VM)
-  &gt; docker-machine ls (list your available machines)
-  &gt; docker-machine env default (get the environment commands for your new VM)
-  &gt; eval "$(docker-machine env default)" (connect your shell to the default machine)
-  &gt; docker load &lt; /yourpath/s-splat.tar (load our image)
+<pre><code>  &gt; sudo docker-machine create --driver virtualbox default (create a new Docker VM)
+  &gt; sudo docker-machine ls (list your available machines)
+  &gt; sudo docker-machine env default (get the environment commands for your new VM)
+  &gt; sudo eval "$(docker-machine env default)" (connect your shell to the default machine)
+  &gt; sudo docker load &lt; /yourpath/s-splat.tar (load our image)
   &gt; sudo docker images (check the available images)
   &gt; sudo docker run -i -t s-splat /bin/bash (run the image)
 </code></pre>
