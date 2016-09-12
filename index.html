@@ -91,23 +91,23 @@
 
 <p>Here is how to run the S-SPLat evaluation against all the subjects we used (companies, desktopsearcher, email, gpl, jtopas, notepad, sudoku, and zipme). The instructions are for our VM image:</p>
 
-<p><em>Running S-SPLat</em></p>
+<p><strong>Running S-SPLat</strong></p>
 
-<pre><code> 1. &gt; cd spls/s-splat
+<pre><code> 1. &gt; cd spls/s-splat/
  2. &gt; chmod +x ssplat 
  3. &gt; chmod +x runssplat.sh 
  4. &gt; ./runssplat.sh (run S-SPLat for all subjects, this may take about 5 days)
 </code></pre>
 
-<p>The output of S-SPLat execution is stored in /spls/s-splat/data (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each subject and technique, for example: /spls/s-splat/data/gpl_pairwise.txt</p>
+<p>The output of S-SPLat execution is stored in /spls/s-splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each subject and technique, for example: /spls/s-splat/data/gpl_pairwise.txt</p>
 
-<p><em>Reproducing Results</em></p>
+<p><strong>Reproducing Results</strong></p>
 
-<pre><code> 1. 
- 2.
- 3.
- ...
+<pre><code> 1. &gt; chmod +x genstats.jar (inside spls/s-splat/)
+ 2. &gt; java -jar genstats.jar (this may take about 10 minutes)
 </code></pre>
+
+<p>The output of genstats.jar execution is stored in /s-splat/plots-figs/samplesize-versus-numfailures/.txt. These sample sets are used to generate Figures 6, 7, and 8 of the paper.</p>
 
 <hr>
 
