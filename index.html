@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="S-SPLat : Balancing Soundness and Efficiency for Practical Testing of Configurable Software">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>S-SPLat</title>
+    <meta charset="UTF-8">
+    <title>S-SPLat by sabrinadfs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">S-SPLat</h1>
+      <h2 class="project-tagline">Balancing Soundness and Efficiency for Practical Testing of Configurable Software</h2>
+      <a href="https://github.com/sabrinadfs/s-splat" class="btn">View on GitHub</a>
+      <a href="https://github.com/sabrinadfs/s-splat/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sabrinadfs/s-splat/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sabrinadfs/s-splat">View on GitHub</a>
-
-          <h1 id="project_title">S-SPLat</h1>
-          <h2 id="project_tagline">Balancing Soundness and Efficiency for Practical Testing of Configurable Software</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sabrinadfs/s-splat/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sabrinadfs/s-splat/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h4>
+    <section class="main-content">
+      <h4>
 <a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h4>
 
 <p>Testing configurable systems is important and challenging due to the enormous space of configurations where errors can hide. Existing approaches to test these systems are often costly or unreliable. This paper proposes S-SPLat a technique that combines heuristic sampling with symbolic search to obtain both breadth and depth in the exploration of the configuration space. S-SPLat builds on SPLat, our previously developed technique, that explores all reachable configurations from tests. In contrast to its predecessor, S-SPLat sacrifices soundness in favor of efficiency. We evaluated our technique on eight software product lines of various sizes and on a large configurable system (GCC). Considering the results for GCC, S-SPLat was able to reproduce all five bugs that we previously found in a previous study with SPLat but much faster and it was able to find two new bugs in a recent release of GCC. Results suggest that it is preferable to use a combination of simple heuristics to drive the symbolic search as opposed to a single heuristic that enforces a large set of test requirements. S-SPLat and our experimental infrastructure are publicly available.</p>
@@ -71,12 +59,17 @@
 <a id="artifact-organization" class="anchor" href="#artifact-organization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Organization</h4>
 
 <pre><code>  The important folders and files in the VM image are listed as follows: 
-  * /spls/s-splat: contains the source code of S-SPLat, scripts and library dependencies;
-  * /spls/s-splat/src-subjects: contains the source code of the SPLs used in our experiments;
-  * /spls/s-splat/data: the results of S-SPLat execution go to this folder;
-  * /spls/s-splat/plots-figs: the dateset produced from results goes to this folder;
-  * /gcc6: contains the instrumented and installed version of GCC 6.1.0 scripts and library dependencies;
-  * /gcc6/splat: contains the source code the source code of S-SPLat specific for GCC, scripts and library dependencies.
+  * 1) For SPLs
+        * /spls/s-splat: contains the source code of S-SPLat, scripts and library dependencies
+        * /spls/s-splat/src-subjects: contains the source code of the SPLs used in our experiments
+        * /spls/s-splat/data: the raw data from results of S-SPLat execution will go to this folder
+        * /spls/s-splat/plots-figs: the dataset processed from results goes to this folder
+  * 2) For GCC
+        * /gcc6: contains the instrumented and installed version of GCC 6.1.0 scripts and library dependencies
+        * /gcc6/splat: contains the source code the source code of S-SPLat specific for GCC, scripts and library dependencies
+  * 3) Datasets
+        * /dataset/data-plots: contains a folders for each figure generated from results, where each one of these folders contain the dataset, the correspondent plot(s), and the scripts to generate the plots
+        * /dataset/rawdata-results: contains the results from the execution of S-SPLat with SPLs(/dataset/rawdata-results/spls), GCC-6.1.0 (/dataset/rawdata-results/gcc6), and GCC-4.8.2 (/dataset/rawdata-results/gcc4) 
 </code></pre>
 
 <hr>
@@ -131,18 +124,15 @@
 </code></pre>
 
 <hr>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">S-SPLat maintained by <a href="https://github.com/sabrinadfs">sabrinadfs</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sabrinadfs/s-splat">S-SPLat</a> is maintained by <a href="https://github.com/sabrinadfs">sabrinadfs</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
