@@ -96,16 +96,16 @@
 
 <p><strong>Reproducing Results</strong></p>
 
-<pre><code> 1. &gt; chmod +x genstats.jar (inside spls/s-splat/)
+<pre><code> 1. &gt; chmod +x genstats.jar (inside /spls/s-splat/)
  2. &gt; java -jar genstats.jar (this may take about 10 minutes)
 </code></pre>
 
-<p>The output of genstats.jar execution is stored in /s-splat/plots-figs/samplesize-versus-numfailures/.txt. These sample sets are used to generate Figures 6, 7, and 8 of the paper.</p>
+<p>The output of genstats.jar execution is stored in /spls/s-splat/plots-figs/samplesize-versus-numfailures/.txt. These sample sets are used to generate Figures 6, 7, and 8 of the paper.</p>
 
 <hr>
 
 <h5>
-<a id="2-experiments-for-gcc-coming-soon" class="anchor" href="#2-experiments-for-gcc-coming-soon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Experiments for GCC (coming soon)</h5>
+<a id="2-experiments-for-gcc" class="anchor" href="#2-experiments-for-gcc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Experiments for GCC</h5>
 
 <p><strong>Running S-SPLat</strong></p>
 
@@ -113,18 +113,18 @@
  2. For each technique run this command: 
     &gt; ./splat.sh /gcc6/ &lt;technique&gt; 
     (&lt;technique&gt;: med, oe, od, pw - example ./splat.sh /gcc6/ oe)
-    The execution of S-SPLat for all 4 techniques may take about 2 weeks.
+    The execution of S-SPLat for all 4 techniques may take about a week.
 </code></pre>
 
 <p>The output of S-SPLat execution is stored in /gcc6/splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each technique, for example: /gcc6/splat/data/gcc.pw.txt.</p>
 
 <p><strong>Reproducing Results</strong></p>
 
-<pre><code> 1.
- 2.
- 3.
- ...
+<pre><code> 1. &gt; chmod +x genstats.jar (inside /gcc6/splat/)
+ 2. &gt; java -jar genstats.jar (this may take about 10 minutes)
 </code></pre>
+
+<p>The output of genstats.jar execution is stored in /gcc6/splat/plots-figs/. These sample sets are used to generate Figures 10 and 11 of the paper.</p>
 
 <hr>
 
