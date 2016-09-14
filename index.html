@@ -42,7 +42,7 @@
 
 <p><strong>Prerequisite</strong>:  In order to set up the VM, you need to install a version of <a href="https://www.docker.com/">Docker</a>.</p>
 
-<p><strong>Setup</strong>: Start the Docker default machine and load the image containing our VM image (created on Ubuntu 15.04). On terminal, run the following commands:</p>
+<p><strong>Setup</strong>: Start the Docker default machine and load the image containing our VM image (created on Ubuntu 15.04). After start Docker, start the terminal and run the following commands:</p>
 
 <pre><code>  &gt; sudo docker-machine create --driver virtualbox default (create a new Docker VM)
   &gt; sudo docker-machine ls (list your available machines)
@@ -92,7 +92,7 @@
  4. &gt; ./runssplat.sh (run S-SPLat for all subjects, this may take about 5 days)
 </code></pre>
 
-<p>The output of S-SPLat execution is stored in /spls/s-splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each subject and technique, for example: /spls/s-splat/data/gpl_pairwise.txt</p>
+<p>The output of S-SPLat execution is stored in /spls/s-splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each subject and technique, for example: /spls/s-splat/data/gpl_pairwise.txt.</p>
 
 <p><strong>Reproducing Results</strong></p>
 
@@ -109,11 +109,14 @@
 
 <p><strong>Running S-SPLat</strong></p>
 
-<pre><code> 1.
- 2.
- 3.
- ...
+<pre><code> 1. &gt; cd /gcc6/splat/
+ 2. For each technique run this command: 
+    &gt; ./splat.sh /gcc6/ &lt;technique&gt; 
+    (&lt;technique&gt;: med, oe, od, pw - example ./splat.sh /gcc6/ oe)
+    The execution of S-SPLat for all 4 techniques may take about 2 weeks.
 </code></pre>
+
+<p>The output of S-SPLat execution is stored in /gcc6/splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each technique, for example: /gcc6/splat/data/gcc.pw.txt.</p>
 
 <p><strong>Reproducing Results</strong></p>
 
