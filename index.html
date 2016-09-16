@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Artifact of Balancing Soundness and Efficiency for Practical Testing of Configurable Software</title>
+    <title>S-SPLat by sabrinadfs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,11 +13,14 @@
     <section class="page-header">
       <h1 class="project-name">S-SPLat</h1>
       <h2 class="project-tagline">Balancing Soundness and Efficiency for Practical Testing of Configurable Software</h2>
+      <a href="https://github.com/sabrinadfs/s-splat" class="btn">View on GitHub</a>
+      <a href="https://github.com/sabrinadfs/s-splat/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sabrinadfs/s-splat/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-      <h4>
-<a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h4>
+      <h3>
+<a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
 
 <p>Testing configurable systems is important and challenging due to the enormous space of configurations where errors can hide. Existing approaches to test these systems are often costly or unreliable. This paper proposes S-SPLat a technique that combines heuristic sampling with symbolic search to obtain both breadth and depth in the exploration of the configuration space. S-SPLat builds on SPLat, our previously developed technique, that explores all reachable configurations from tests. In contrast to its predecessor, S-SPLat sacrifices soundness in favor of efficiency. We evaluated our technique on eight software product lines of various sizes and on a large configurable system (GCC). Considering the results for GCC, S-SPLat was able to reproduce all five bugs that we previously found in a previous study with SPLat but much faster and it was able to find two new bugs in a recent release of GCC. Results suggest that it is preferable to use a combination of simple heuristics to drive the symbolic search as opposed to a single heuristic that enforces a large set of test requirements. S-SPLat and our experimental infrastructure are publicly available.</p>
 
@@ -25,15 +28,15 @@
 
 <hr>
 
-<h4>
-<a id="artifact-evaluation---icse-2017-submission" class="anchor" href="#artifact-evaluation---icse-2017-submission" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Evaluation - ICSE 2017 submission</h4>
+<h3>
+<a id="artifact-evaluation---icse-2017-submission" class="anchor" href="#artifact-evaluation---icse-2017-submission" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Evaluation - ICSE 2017 submission</h3>
 
 <p>The artifact evaluation contains all the artifacts used in this paper, including the source code, the data set and scripts to generate tables and plots. We explain how to reproduce the results using a single virtual machine. If you have any question, please contact <a href="mailto:sabrinadfs@gmail.com">sabrinadfs@gmail.com</a>.</p>
 
 <hr>
 
-<h4>
-<a id="artifact-setup" class="anchor" href="#artifact-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Setup</h4>
+<h3>
+<a id="artifact-setup" class="anchor" href="#artifact-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Setup</h3>
 
 <p><strong>Download Link</strong>: <a href="https://dl.dropboxusercontent.com/u/29543515/s-splat.tar">s-splat.tar</a></p>
 
@@ -52,8 +55,8 @@
 
 <hr>
 
-<h4>
-<a id="artifact-organization" class="anchor" href="#artifact-organization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Organization</h4>
+<h3>
+<a id="artifact-organization" class="anchor" href="#artifact-organization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Artifact Organization</h3>
 
 <pre><code>  The important folders and files in the VM image are listed as follows: 
   * 1) For SPLs
@@ -71,13 +74,13 @@
 
 <hr>
 
-<h4>
-<a id="replication" class="anchor" href="#replication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Replication</h4>
+<h3>
+<a id="replication" class="anchor" href="#replication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Replication</h3>
 
 <hr>
 
-<h5>
-<a id="1-experiments-for-spls" class="anchor" href="#1-experiments-for-spls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) Experiments for SPLs</h5>
+<h4>
+<a id="1-experiments-for-spls" class="anchor" href="#1-experiments-for-spls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) Experiments for SPLs</h4>
 
 <p>Here is how to run the S-SPLat evaluation against all the subjects we used (companies, desktopsearcher, email, gpl, jtopas, notepad, sudoku, and zipme). The instructions are for our VM image:</p>
 
@@ -101,8 +104,8 @@
 
 <hr>
 
-<h5>
-<a id="2-experiments-for-gcc" class="anchor" href="#2-experiments-for-gcc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Experiments for GCC</h5>
+<h4>
+<a id="2-experiments-for-gcc" class="anchor" href="#2-experiments-for-gcc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Experiments for GCC</h4>
 
 <p><strong>Running S-SPLat</strong></p>
 
