@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Artifct of Balancing Soundness and Efficiency for Practical Testing of Configurable Software</title>
+    <title>S-SPLat by sabrinadfs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,6 +13,9 @@
     <section class="page-header">
       <h1 class="project-name">S-SPLat</h1>
       <h2 class="project-tagline">Balancing Soundness and Efficiency for Practical Testing of Configurable Software</h2>
+      <a href="https://github.com/sabrinadfs/s-splat" class="btn">View on GitHub</a>
+      <a href="https://github.com/sabrinadfs/s-splat/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sabrinadfs/s-splat/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
@@ -63,7 +66,9 @@
         * /spls/s-splat/plots-figs: the dataset processed from results goes to this folder
   * 2) For GCC
         * /gcc6: contains the instrumented and installed version of GCC 6.1.0 scripts and library dependencies
-        * /gcc6/splat: contains the source code the source code of S-SPLat specific for GCC, scripts and library dependencies
+        * /gcc6/s-splatgcc: contains the source code the source code of S-SPLat specific for GCC, scripts and library dependencies
+        * /gcc6/s-splatgcc/data: the raw data from results of S-SPLat execution will go to this folder, and the tests executed are also in this folder
+        * /gcc6/s-splatgcc/plots-figs: the dataset processed from results goes to this folder
   * 3) Datasets
         * /dataset/data-plots: contains a folders for each figure generated from results, where each one of these folders contain the dataset, the correspondent plot(s), and the scripts to generate the plots
         * /dataset/rawdata-results: contains the results from the execution of S-SPLat with SPLs(/dataset/rawdata-results/spls), GCC-6.1.0 (/dataset/rawdata-results/gcc6), and GCC-4.8.2 (/dataset/rawdata-results/gcc4) 
@@ -95,9 +100,12 @@
 
 <pre><code> 1. &gt; chmod +x genstats.jar (inside /spls/s-splat/)
  2. &gt; java -jar genstats.jar (this may take about 10 minutes)
+ Remark: these commands must be executed after running S-SPLat.
 </code></pre>
 
 <p>The output of genstats.jar execution is stored in /spls/s-splat/plots-figs/samplesize-versus-numfailures/.txt. These sample sets are used to generate Figures 6, 7, and 8 of the paper.</p>
+
+<p>To generate the plots, run ./genplot.sh inside the corresponding plot folder in /spls/s-splat/plots-figs/. For example: run ./genplot.sh in /spls/s-splat/plots-figs/samplesize-versus-numfailures/ and it will generate grid.pdf with the corresponding plot.</p>
 
 <hr>
 
@@ -106,22 +114,25 @@
 
 <p><strong>Running S-SPLat</strong></p>
 
-<pre><code> 1. &gt; cd /gcc6/splat/
+<pre><code> 1. &gt; cd /gcc6/s-splatgcc/
  2. For each technique run this command: 
-    &gt; ./splat.sh /gcc6/ &lt;technique&gt; 
-    (&lt;technique&gt;: med, oe, od, pw - example ./splat.sh /gcc6/ oe)
+    &gt; ./ssplat.sh /gcc6/ &lt;technique&gt; 
+    (&lt;technique&gt;: med, oe, od, pw - example ./ssplat.sh /gcc6/ oe)
     The execution of S-SPLat for all 4 techniques may take about a week.
 </code></pre>
 
-<p>The output of S-SPLat execution is stored in /gcc6/splat/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each technique, for example: /gcc6/splat/data/gcc.pw.txt.</p>
+<p>The output of S-SPLat execution is stored in /gcc6/s-splatgcc/data/ (this output contains all configurations sampled by each technique for all tests, and the test results). It will produce a file for each technique, for example: /gcc6/s-splatgcc/data/gcc.pw.txt.</p>
 
 <p><strong>Reproducing Results</strong></p>
 
-<pre><code> 1. &gt; chmod +x genstats.jar (inside /gcc6/splat/)
+<pre><code> 1. &gt; chmod +x genstats.jar (inside /gcc6/s-splatgcc/)
  2. &gt; java -jar genstats.jar (this may take about 10 minutes)
+ Remark: these commands must be executed after running S-SPLat.
 </code></pre>
 
-<p>The output of genstats.jar execution is stored in /gcc6/splat/plots-figs/. These sample sets are used to generate Figures 10 and 11 of the paper.</p>
+<p>The output of genstats.jar execution is stored in /gcc6/splat/plots-figs/. These sample sets are used to generate Figures 10a, 10b, 10c of the paper. The rest of figure were manually built.</p>
+
+<p>To generate the plots, run ./genplot.sh inside the corresponding plot folder in /gcc6/s-splatgcc/plots-figs/. For example: run ./genplot.sh in /gcc6/s-splatgcc/plots-figs/gcc-samplesize-versus-numfailures/ and it will generate gcc.pdf with the corresponding plot.</p>
 
 <hr>
 
